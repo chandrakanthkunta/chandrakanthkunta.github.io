@@ -3,15 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your stylesheet -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Your site favicon -->
-    <!-- You can also add external icon libraries like Font Awesome -->
+    <title>Chandrakanth Kunta | Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section#about {
+            text-align: center;
+        }
+
+        section#about img {
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        .project {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .project a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #ffd700;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Chandrakanth Kunta</h1>
+        <p>Data Scientist | Machine Learning | AI Enthusiast</p>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -23,27 +104,38 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Here's a brief introduction about myself.</p>
-        <img src="images/profile.jpg" alt="Your profile picture" width="150">
+        <p>I’m Chandrakanth Kunta, a passionate data scientist with a strong background in analytics, machine learning, and building insightful data-driven solutions. I enjoy sharing knowledge through blogs and developing impactful projects.</p>
+        <img src="images/profile.jpg" alt="Chandrakanth Kunta" width="150">
     </section>
 
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project">
-            <img src="images/project1.jpg" alt="Project 1 screenshot">
-            <p>Project 1 Description</p>
-            <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+            <img src="images/project1.jpg" alt="Project 1">
+            <p><strong>Sentiment Analysis App</strong> - A web app that classifies user sentiment using NLP techniques and deep learning models.</p>
+            <a href="https://github.com/conan-chandu/sentiment-app" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <img src="images/project2.jpg" alt="Project 2">
+            <p><strong>EDA Dashboard</strong> - Interactive dashboard to explore datasets visually and perform Exploratory Data Analysis.</p>
+            <a href="https://github.com/conan-chandu/eda-dashboard" target="_blank">View on GitHub</a>
         </div>
         <!-- Add more projects here -->
     </section>
 
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:conan.chandu@gmail.com" style="color:#ffd700;">conan.chandu@gmail.com</a></p>
+    </section>
+
     <footer>
-        <p>Connect with me: 
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> | 
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <p>Connect with me:
+            <a href="https://www.linkedin.com/in/chandrakanth-kunta" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+            <a href="https://github.com/conan-chandu" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         </p>
+        <p>&copy; 2025 Chandrakanth Kunta</p>
     </footer>
 
-    <script src="script.js"></script> <!-- If you have any JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
