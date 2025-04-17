@@ -1,0 +1,14 @@
+title: "Chandrakanth Kunta"
+email: conan.chandu@gmail.com
+description: >-
+  A personal data science portfolio with blogs and projects.
+baseurl: ""
+url: "https://chandrakanthkunta.github.io"
+
+theme: minimal-mistakes-jekyll
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+include:
+  - _pages
