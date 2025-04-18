@@ -1,205 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandrakanth Kunta | Data Scientist Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: #fff;
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        section#about {
-            text-align: center;
-        }
-
-        section#about img {
-            border-radius: 50%;
-            margin-top: 20px;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px 30px;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .info-grid p {
-            margin: 5px 0;
-        }
-
-        .project, .entry {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-
-        .project img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .project a, .entry a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: #ffd700;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chandrakanth Kunta | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Chandrakanth Kunta</h1>
-        <p>Data Scientist | Machine Learning | AI Enthusiast</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I’m Chandrakanth Kunta, a data scientist with a passion for turning complex data into actionable insights. I enjoy building ML models, visualizations, and writing about my work.</p>
-        <img src="images/profile.jpg" alt="Chandrakanth Kunta" width="150">
-        <div class="info-grid">
-            <p><strong>Email:</strong> <a href="mailto:conan.chandu@gmail.com" style="color:#ffd700;">conan.chandu@gmail.com</a></p>
-            <p><strong>Phone:</strong> 703-286-9121</p>
-            <p><strong>Location:</strong> Hyderabad</p>
-            <p><strong>Birthday:</strong> December 6</p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/chandu-k-6405011bb" target="_blank" style="color:#ffd700;">linkedin.com/in/chandu-k-6405011bb</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/chandrakanthkunta" target="_blank" style="color:#ffd700;">github.com/chandrakanthkunta</a></p>
-            <p><strong>Blog:</strong> <a href="https://medium.com/@conan.chandu" target="_blank" style="color:#ffd700;">medium.com/@conan.chandu</a></p>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="content">
+      <h3>Hi, I'm</h3>
+      <h1>Chandrakanth Kunta</h1>
+      <h4>Data Scientist & ML Engineer</h4>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+  </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Python, SQL, Power BI, AWS</li>
-            <li>Machine Learning, Deep Learning, LLMs</li>
-            <li>Data Cleaning, Data Visualization, Model Deployment</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <img src="images/project1.jpg" alt="Project 1">
-            <p><strong>Sentiment Analysis App</strong> - A web app that classifies user sentiment using NLP techniques and deep learning models.</p>
-            <a href="https://github.com/conan-chandu/sentiment-app" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project">
-            <img src="images/project2.jpg" alt="Project 2">
-            <p><strong>EDA Dashboard</strong> - Interactive dashboard to explore datasets visually and perform Exploratory Data Analysis.</p>
-            <a href="https://github.com/conan-chandu/eda-dashboard" target="_blank">View on GitHub</a>
-        </div>
-        <!-- Add more projects as needed -->
-    </section>
-
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="entry">
-            <p><strong>Advanced Data Science with Python</strong> - Innomatics Research Labs</p>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="entry">
-            <p><strong>Data Scientist</strong> - 2.9 Years of Experience</p>
-            <p>Worked on multiple ML and AI-based projects, building dashboards, developing models, and deploying them on cloud environments.</p>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <div class="entry">
-            <p><strong>B.Tech Graduate</strong> - Class of 2023</p>
-            <p>Specialized in Computer Science and Engineering (or your branch here).</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to collaborate or get in touch, feel free to reach out!</p>
-        <p>Email: <a href="mailto:conan.chandu@gmail.com" style="color:#ffd700;">conan.chandu@gmail.com</a></p>
-        <p>Phone: 703-286-9121</p>
-    </section>
-
-    <footer>
-        <p>Connect with me:
-            <a href="https://www.linkedin.com/in/chandu-k-6405011bb" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
-            <a href="https://github.com/chandrakanthkunta" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
-            <a href="https://medium.com/@conan.chandu" target="_blank"><i class="fab fa-medium"></i> Blog</a>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h1 class="heading">About <span>Me</span></h1>
+    <div class="row">
+      <div class="content">
+        <h3>I'm Chandrakanth Kunta</h3>
+        <p>
+          Passionate data scientist with 2.9 years of experience in solving business problems using Machine Learning, Deep Learning, and LLMs. Certified in Advanced Data Science with Python. Skilled in Python, SQL, AWS, Power BI, and more.
         </p>
-        <p>&copy; 2025 Chandrakanth Kunta</p>
-    </footer>
+        <p>
+          Actively seeking remote opportunities where I can make data-driven decisions and build impactful AI solutions.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h1 class="heading">My <span>Skills</span></h1>
+    <div class="box-container" id="skillsContainer">
+      <!-- Add your skills here -->
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <h1 class="heading">My <span>Education</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <h3>B.Tech in [Your Major]</h3>
+        <p>Graduated in 2023</p>
+        <p>[Your College Name]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects / Work Section -->
+  <section class="work" id="work">
+    <h1 class="heading">My <span>Projects</span></h1>
+    <div class="box-container">
+      <!-- Add your projects here -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h1 class="heading">Contact <span>Me</span></h1>
+    <form action="#">
+      <input type="text" placeholder="Your Name" class="box" />
+      <input type="email" placeholder="Your Email" class="box" />
+      <textarea name="" class="box" placeholder="Your Message" rows="6"></textarea>
+      <input type="submit" value="Send Message" class="btn" />
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Chandrakanth Kunta. All Rights Reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
