@@ -1,4 +1,4 @@
-/* Reset default browser styles */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +11,13 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f2f5;
-  color: #333;
+  background: #1f1b2e;
+  color: #e6e6fa;
   line-height: 1.6;
+  transition: all 0.4s ease;
 }
 
+/* Reusable Classes */
 section {
   padding: 80px 20px;
   max-width: 1000px;
@@ -26,19 +28,37 @@ section {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #333;
+  color: #dcd0ff;
+  animation: fadeInDown 1s ease;
 }
 
 .heading span {
-  color: #007bff;
+  color: #c084fc;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to right, #007bff, #0056b3);
+  background: linear-gradient(to right, #7f00ff, #7e5bef);
   color: white;
   padding: 120px 20px;
   text-align: center;
+  animation: fadeInDown 1s ease;
 }
 
 .hero h1 {
@@ -54,29 +74,31 @@ section {
 
 .hero .btn {
   background: white;
-  color: #007bff;
+  color: #7f00ff;
   padding: 10px 25px;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .hero .btn:hover {
-  background: #f0f0f0;
+  background: #f0f0ff;
+  transform: scale(1.05);
 }
 
 /* About Section */
 .about .content h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
+  color: #e0b3ff;
 }
 
 .about .content p {
   margin-bottom: 15px;
 }
 
-/* Skills Section */
+/* Skills */
 .skills .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -85,15 +107,16 @@ section {
 }
 
 .skills .box-container .box {
-  background: white;
+  background: #2e2640;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 200px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(128, 0, 128, 0.2);
+  animation: pop 0.6s ease;
 }
 
-/* Education Section */
+/* Education */
 .education .box-container {
   display: flex;
   justify-content: center;
@@ -101,13 +124,14 @@ section {
 }
 
 .education .box {
-  background: white;
+  background: #32274d;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.2);
+  animation: fadeInUp 0.6s ease;
 }
 
-/* Work Section */
+/* Work */
 .work .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -116,14 +140,15 @@ section {
 }
 
 .work .box-container .box {
-  background: white;
+  background: #392d5a;
   border-radius: 10px;
   padding: 20px;
   width: 300px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(186, 85, 211, 0.2);
+  animation: fadeInUp 0.6s ease;
 }
 
-/* Contact Section */
+/* Contact */
 .contact form {
   max-width: 600px;
   margin: auto;
@@ -135,28 +160,32 @@ section {
 .contact .box {
   padding: 15px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #8e44ad;
   font-size: 1rem;
+  background: #251c38;
+  color: #fff;
 }
 
 .contact .btn {
-  background: #007bff;
+  background: #8e44ad;
   color: white;
   padding: 12px;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .contact .btn:hover {
-  background: #0056b3;
+  background: #a66bbe;
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  background: #222;
-  color: white;
+  background: #140c1c;
+  color: #ccc;
   text-align: center;
   padding: 25px 20px;
 }
