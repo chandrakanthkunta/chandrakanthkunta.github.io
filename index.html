@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chandrakanth Kunta | Data Scientist Portfolio</title>
     <link rel="stylesheet" href="styles.css">
@@ -67,7 +67,7 @@
             margin: 5px 0;
         }
 
-        .project {
+        .project, .entry {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             margin-bottom: 20px;
@@ -79,7 +79,7 @@
             border-radius: 10px;
         }
 
-        .project a {
+        .project a, .entry a {
             color: #ffd700;
             text-decoration: none;
         }
@@ -99,6 +99,10 @@
         footer a:hover {
             color: #ffd700;
         }
+
+        ul {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -108,7 +112,11 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -129,6 +137,15 @@
         </div>
     </section>
 
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python, SQL, Power BI, AWS</li>
+            <li>Machine Learning, Deep Learning, LLMs</li>
+            <li>Data Cleaning, Data Visualization, Model Deployment</li>
+        </ul>
+    </section>
+
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project">
@@ -140,6 +157,30 @@
             <img src="images/project2.jpg" alt="Project 2">
             <p><strong>EDA Dashboard</strong> - Interactive dashboard to explore datasets visually and perform Exploratory Data Analysis.</p>
             <a href="https://github.com/conan-chandu/eda-dashboard" target="_blank">View on GitHub</a>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="entry">
+            <p><strong>Advanced Data Science with Python</strong> - Innomatics Research Labs</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="entry">
+            <p><strong>Data Scientist</strong> - 2.9 Years of Experience</p>
+            <p>Worked on multiple ML and AI-based projects, building dashboards, developing models, and deploying them on cloud environments.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="entry">
+            <p><strong>B.Tech Graduate</strong> - Class of 2023</p>
+            <p>Specialized in Computer Science and Engineering (or your branch here).</p>
         </div>
     </section>
 
