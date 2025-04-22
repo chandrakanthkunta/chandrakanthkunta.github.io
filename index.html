@@ -3,82 +3,1181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chandrakanth Kunta | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio of Chandrakanth Kunta, a Data Scientist and Generative AI Expert specializing in Python, Machine Learning, Deep Learning, and AI applications."/>
+  <meta name="keywords" content="Data Science, Machine Learning, Generative AI, Python, SQL, Power BI, Tableau, LangChain, Hugging Face"/>
+  <meta name="author" content="Chandrakanth Kunta"/>
+  <title>Chandrakanth Kunta | Data Science & AI Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg-color: linear-gradient(135deg, #0a0a23 0%, #1b1b32 100%);
+      --card-bg: #1b1b32;
+      --text-color: #ffffff;
+      --accent-color: #00d4b5;
+      --accent-hover: #00a895;
+    }
+
+    [data-theme="light"] {
+      --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --accent-color: #007bff;
+      --accent-hover: #0056b3;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(27, 27, 50, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      animation: slideInDown 0.5s ease-out;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--text-color);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar-brand:hover {
+      color: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    .nav-link {
+      color: var(--text-color);
+      font-weight: 500;
+      margin-left: 20px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    #theme-toggle {
+      background: none;
+      border: none;
+      color: var(--accent-color);
+      font-size: 20px;
+      padding: 5px;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--text-color);
+      animation: slideInLeft 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 28px;
+      color: var(--accent-color);
+      animation: slideInRight 1.2s ease-out;
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-100%); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section Headings */
+    section h2 {
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+      position: relative;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    section h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--accent-color);
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: expandLine 0.8s ease-out;
+    }
+
+    @keyframes expandLine {
+      from { width: 0; }
+      to { width: 60px; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Profile Picture */
+    .profile-pic {
+      width: 180px;
+      border-radius: 50%;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 0 20px rgba(0, 212, 181, 0.5);
+      animation: bounceIn 1s ease-out;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 30px rgba(0, 212, 181, 0.7);
+    }
+
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Skill Card */
+    .skill-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      color: var(--text-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: bounceIn 1s ease-out;
+      animation-delay: calc(0.1s * var(--i));
+      perspective: 1000px;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 212, 181, 0.4);
+    }
+
+    .skill-card i {
+      font-size: 50px;
+      color: var(--accent-color);
+      margin-bottom: 15px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .skill-card:hover i {
+      transform: scale(1.2);
+      color: var(--text-color);
+    }
+
+    .skill-card p {
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #2a2a5a;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .progress-bar::before {
+      content: '';
+      width: var(--progress);
+      height: 100%;
+      background: var(--accent-color);
+      display: block;
+      animation: progressFill 1.5s ease-out;
+    }
+
+    @keyframes progressFill {
+      from { width: 0; }
+      to { width: var(--progress); }
+    }
+
+    /* Custom Button */
+    .btn-custom {
+      background: var(--accent-color);
+      color: #0a0a23;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    .btn-custom:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0, 212, 181, 0.7);
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 212, 181, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(0, 212, 181, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 212, 181, 0); }
+    }
+
+    /* Project Card */
+    .project-card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 15px;
+      text-align: left;
+      height: 100%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideUp 1s ease-out;
+      animation-delay: calc(0.2s * var(--i));
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) rotate(2deg);
+      box-shadow: 0 8px 25px rgba(0, 212, 181, 0.4);
+    }
+
+    .project-card h5 {
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Contact Form */
+    .form-control {
+      background: var(--card-bg);
+      border: 1px solid var(--accent-color);
+      color: var(--text-color);
+      border-radius: 10px;
+      padding: 12px;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-hover);
+      box-shadow: 0 0 10px rgba(0, 212, 181, 0.5);
+      background: var(--card-bg);
+      color: var(--text-color);
+      transform: scale(1.02);
+    }
+
+    .form-control::placeholder {
+      color: #cccccc;
+    }
+
+    .form-label {
+      color: var(--accent-color);
+      font-weight: 500;
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: var(--accent-color);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      margin: 20px 0;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+      padding-right: 30px;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      padding-left: 30px;
+    }
+
+    .timeline-content {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      right: -38px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -38px;
+      right: auto;
+    }
+
+    /* Scroll-to-Top Button */
+    #scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      padding: 10px 15px;
+      z-index: 1000;
+      animation: bounce 1.5s infinite;
+    }
+
+    .scroll-top.show {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Footer */
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      color: var(--accent-color);
+      font-size: 24px;
+      margin: 0 10px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icon:hover {
+      color: var(--text-color);
+      transform: scale(1.2) rotate(15deg);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    /* Parallax Background */
+    .parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://via.placeholder.com/1920x1080?text=Section+Background') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    /* Modal */
+    .modal-content {
+      background: var(--card-bg);
+      border: 1px solid var(--accent-color);
+      box-shadow: 0 0 20px rgba(0, 212, 181, 0.5);
+      color: var(--text-color);
+    }
+
+    .modal-header, .modal-body {
+      border: none;
+    }
+
+    .modal-title {
+      color: var(--accent-color);
+    }
+
+    /* Animations for Sections */
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInSection 1s ease-out forwards;
+    }
+
+    @keyframes fadeInSection {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #about { animation-delay: 0.2s; }
+    #experience { animation-delay: 0.4s; }
+    #skills { animation-delay: 0.6s; }
+    #projects { animation-delay: 0.8s; }
+    #blogs { animation-delay: 1.0s; }
+    #certifications { animation-delay: 1.2s; }
+    #achievements { animation-delay: 1.4s; }
+    #contact { animation-delay: 1.6s; }
+
+    /* Blog Card */
+    .blog-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: left;
+      height: 100%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideUp 1s ease-out;
+      animation-delay: calc(0.2s * var(--i));
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 212, 181, 0.4);
+    }
+
+    .blog-card h5 {
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 20px;
+      }
+
+      section h2 {
+        font-size: 32px;
+      }
+
+      .profile-pic {
+        width: 120px;
+      }
+
+      .skill-card i {
+        font-size: 40px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0;
+        padding-left: 50px;
+        text-align: left;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 0;
+        padding-left: 50px;
+      }
+
+      .timeline-content::before {
+        left: -36px;
+        right: auto;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .skill-card i {
+        font-size: 35px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Chandrakanth</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn btn-custom" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="content">
-      <h3>Hi, I'm</h3>
-      <h1>Chandrakanth Kunta</h1>
-      <h4>Data Scientist & ML Engineer</h4>
-      <a href="#contact" class="btn">Hire Me</a>
+  <section class="hero">
+    <div id="particles-js"></div>
+    <div class="container">
+      <h1 class="text-white fw-bold">I'm Chandrakanth Kunta</h1>
+      <p>I'm a <span id="typed"></span></p>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="about" id="about">
-    <h1 class="heading">About <span>Me</span></h1>
-    <div class="row">
-      <div class="content">
-        <h3>I'm Chandrakanth Kunta</h3>
-        <p>
-          Passionate data scientist with 2.9 years of experience in solving business problems using Machine Learning, Deep Learning, and LLMs. Certified in Advanced Data Science with Python. Skilled in Python, SQL, AWS, Power BI, and more.
-        </p>
-        <p>
-          Actively seeking remote opportunities where I can make data-driven decisions and build impactful AI solutions.
-        </p>
+  <section id="about" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container text-center">
+      <h2>About Me</h2>
+      <div class="row align-items-center mt-4">
+        <div class="col-md-4">
+          <img src="chandrakanth.jpg" alt="Profile Picture of Chandrakanth Kunta" class="profile-pic"/>
+        </div>
+        <div class="col-md-8 text-start">
+          <p>I'm a passionate Data Scientist and Generative AI enthusiast based in India. With a background in data analysis, machine learning, and AI, I thrive on transforming raw data into actionable insights and building innovative AI solutions.</p>
+          <p>With 2.9 years of experience, I specialize in Python, SQL, Scikit-learn, TensorFlow, and LangChain, creating everything from predictive models to AI-powered chatbots. I'm driven by a curiosity to explore new technologies and solve real-world problems.</p>
+          <div class="mt-3">
+            <a href="resume.pdf" class="btn btn-custom" download>Download Resume</a>
+            <a href="mailto:conan.chandu@gmail.com" class="btn btn-custom ms-2">Contact Me</a>
+          </div>
+          <div class="social-icons mt-3">
+            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://kaggle.com" target="_blank" class="social-icon"><i class="fas fa-code"></i></a>
+            <a href="https://medium.com" target="_blank" class="social-icon"><i class="fab fa-medium"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container text-center">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <h5>Data Scientist</h5>
+            <p>2022 - Present</p>
+            <p>Developed machine learning models, Generative AI applications, and dashboards using Python, Scikit-learn, TensorFlow, LangChain, and Power BI.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-content">
+            <h5>Data Science Intern</h5>
+            <p>2021 - 2022</p>
+            <p>Conducted EDA, built data pipelines, and created visualizations using Python, SQL, and Tableau.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section class="skills" id="skills">
-    <h1 class="heading">My <span>Skills</span></h1>
-    <div class="box-container" id="skillsContainer">
-      <!-- Add your skills here -->
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section class="education" id="education">
-    <h1 class="heading">My <span>Education</span></h1>
-    <div class="box-container">
-      <div class="box">
-        <h3>B.Tech in [Your Major]</h3>
-        <p>Graduated in 2023</p>
-        <p>[Your College Name]</p>
+  <section id="skills" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container text-center">
+      <h2>My Skills</h2>
+      <div class="row mt-4 g-4">
+        <div class="col-6 col-md-3" style="--i: 1"><div class="skill-card tilt"><i class="fa-brands fa-python"></i><p>Python</p><div class="progress-bar" style="--progress: 90%"></div></div></div>
+        <div class="col-6 col-md-3" style="--i: 2"><div class="skill-card tilt"><i class="fa-solid fa-database"></i><p>SQL</p><div class="progress-bar" style="--progress: 85%"></div></div></div>
+        <div class="col-6 col-md-3" style="--i: 3"><div class="skill-card tilt"><i class="fa-solid fa-brain"></i><p>Machine Learning</p><div class="progress-bar" style="--progress: 85%"></div></div></div>
+        <div class="col-6 col-md-3" style="--i: 4"><div class="skill-card tilt"><i class="fa-solid fa-network-wired"></i><p>Deep Learning</p><div class="progress-bar" style="--progress: 80%"></div></div></div>
+        <div class="col-6 col-md-3" style="--i: 5"><div class="skill-card tilt"><i class="fa-solid fa-robot"></i><p>Generative AI</p><div class="progress-bar" style="--progress: 85%"></div></div></div>
+        <div class="col-6 col-md-3" style="--i: 6"><div class="skill-card tilt"><i class="fa-solid fa-chart-line"></i><p>Data Visualization</p><div class="progress-bar" style="--progress: 85%"></div></div></div>
+        <div class="col-6 col-md-3" style="--i: 7"><div class="skill-card tilt"><i class="fa-brands fa-docker"></i><p>Deployment</p><div class="progress-bar" style="--progress: 75%"></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Projects / Work Section -->
-  <section class="work" id="work">
-    <h1 class="heading">My <span>Projects</span></h1>
-    <div class="box-container">
-      <!-- Add your projects here -->
+  <!-- Projects Section -->
+  <section id="projects" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container text-center">
+      <h2>Projects</h2>
+      <div class="row mt-4 g-4">
+        <div class="col-md-4" style="--i: 1">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project1Modal">
+            <h5>IPL Cricket Analysis</h5>
+            <p>Interactive dashboard for IPL match analysis using Streamlit.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 2">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project2Modal">
+            <h5>Image Generation with Diffusers</h5>
+            <p>Text-to-image generation using Hugging Face Diffusers.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 3">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project3Modal">
+            <h5>AI Code Reviewer</h5>
+            <p>Automated code review tool using Open AI's API.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 4">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project4Modal">
+            <h5>Amazon Sentiment Analysis</h5>
+            <p>Sentiment analysis of Amazon product reviews using NLP.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 5">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project5Modal">
+            <h5>Stock Market Analysis</h5>
+            <p>Fundamental analysis with web scraping from Grow website.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 6">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project6Modal">
+            <h5>ANN Playground</h5>
+            <p>Interactive tool to explore Artificial Neural Networks.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 7">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project7Modal">
+            <h5>Gradient Descent Playground</h5>
+            <p>Visualization tool for gradient descent optimization.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 8">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project8Modal">
+            <h5>Twitter Location Prediction</h5>
+            <p>Location prediction using ML on Twitter data.</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 9">
+          <div class="project-card tilt" data-bs-toggle="modal" data-bs-target="#project9Modal">
+            <h5>AI in Medical Education</h5>
+            <p>Research on AI applications in medical education.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modals -->
+  <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project1ModalLabel">IPL Cricket Analysis in Streamlit</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=IPL+Cricket+Dashboard" alt="IPL Cricket Analysis Dashboard" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Analyze IPL match data to provide insights on team performance, player statistics, and match outcomes.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, Streamlit, Pandas, Seaborn, Matplotlib, SQL</p>
+          <h6>Approach & Methodology</h6>
+          <p>Collected IPL datasets, performed EDA, and built an interactive Streamlit dashboard to visualize team and player stats.</p>
+          <h6>Results/Impact</h6>
+          <p>Enabled users to explore match trends and player performance, improving fan engagement.</p>
+          <h6>Visualizations</h6>
+          <p>Bar charts, heatmaps, and line plots for match and player statistics.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project2ModalLabel">Image Generation with Diffusers</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=Generated+Image+Demo" alt="Image Generation Demo" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Generate high-quality images from text prompts using diffusion models.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, Hugging Face Diffusers, PyTorch, PIL</p>
+          <h6>Approach & Methodology</h6>
+          <p>Implemented a text-to-image pipeline using Diffusers, fine-tuned model parameters, and generated images from user prompts.</p>
+          <h6>Results/Impact</h6>
+          <p>Produced realistic images from diverse prompts, applicable in creative industries.</p>
+          <h6>Visualizations</h6>
+          <p>Sample generated images with corresponding text prompts.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project3ModalLabel">AI Code Reviewer with Open AI</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=Code+Review+Demo" alt="Code Reviewer Interface" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Automate code reviews to improve code quality and reduce manual effort.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, Open AI API, FastAPI, Git</p>
+          <h6>Approach & Methodology</h6>
+          <p>Integrated Open AI's API to analyze code snippets, suggest improvements, and detect errors. Built a web interface with FastAPI.</p>
+          <h6>Results/Impact</h6>
+          <p>Reduced code review time by 60% and improved code quality for developers.</p>
+          <h6>Visualizations</h6>
+          <p>Web interface showing code input and AI-generated suggestions.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project4Modal" tabindex="-1" aria-labelledby="project4ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project4ModalLabel">Amazon Sentiment Analysis</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=Sentiment+Analysis+Demo" alt="Sentiment Analysis Visualization" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Analyze customer sentiments in Amazon product reviews to understand user feedback.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, NLTK, Scikit-learn, Pandas, Matplotlib</p>
+          <h6>Approach & Methodology</h6>
+          <p>Scraped Amazon reviews, preprocessed text data, and trained a sentiment classification model using Scikit-learn.</p>
+          <h6>Results/Impact</h6>
+          <p>Achieved 88% accuracy in sentiment prediction, aiding product improvement.</p>
+          <h6>Visualizations</h6>
+          <p>Word clouds, sentiment distribution plots, and confusion matrix.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project5Modal" tabindex="-1" aria-labelledby="project5ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project5ModalLabel">Stock Market Fundamental Analysis</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=Stock+Analysis+Demo" alt="Stock Analysis Visualization" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Perform fundamental analysis of stocks using financial data scraped from the Grow website.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, BeautifulSoup, Pandas, Matplotlib, Streamlit</p>
+          <h6>Approach & Methodology</h6>
+          <p>Scraped financial metrics (P/E ratio, EPS, etc.) from Grow, analyzed data, and built a Streamlit app for visualization.</p>
+          <h6>Results/Impact</h6>
+          <p>Provided actionable insights for investors, improving decision-making.</p>
+          <h6>Visualizations</h6>
+          <p>Financial metric plots and comparison charts.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project6Modal" tabindex="-1" aria-labelledby="project6ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project6ModalLabel">ANN Playground</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=ANN+Playground+Demo" alt="ANN Playground Interface" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Create an interactive tool to explore and visualize Artificial Neural Networks.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, TensorFlow, Streamlit, Matplotlib</p>
+          <h6>Approach & Methodology</h6>
+          <p>Developed a Streamlit app allowing users to configure ANN layers, train models, and visualize performance.</p>
+          <h6>Results/Impact</h6>
+          <p>Educated users on ANN concepts, enhancing ML understanding.</p>
+          <h6>Visualizations</h6>
+          <p>Loss curves, accuracy plots, and network architecture diagrams.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project7Modal" tabindex="-1" aria-labelledby="project7ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project7ModalLabel">Gradient Descent Playground</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=Gradient+Descent+Demo" alt="Gradient Descent Visualization" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Visualize the gradient descent optimization process for educational purposes.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, NumPy, Matplotlib, Streamlit</p>
+          <h6>Approach & Methodology</h6>
+          <p>Built an interactive Streamlit app to simulate gradient descent on various functions, allowing parameter tuning.</p>
+          <h6>Results/Impact</h6>
+          <p>Improved understanding of optimization algorithms for students and professionals.</p>
+          <h6>Visualizations</h6>
+          <p>3D surface plots and convergence animations.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project8Modal" tabindex="-1" aria-labelledby="project8ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project8ModalLabel">Location Prediction on Twitter</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=Twitter+Location+Demo" alt="Location Prediction Visualization" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Predict user locations from Twitter data using machine learning techniques.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, Scikit-learn, NLTK, Pandas, Matplotlib</p>
+          <h6>Approach & Methodology</h6>
+          <p>Collected Twitter data, extracted features (e.g., tweet text, hashtags), and trained a classification model to predict locations.</p>
+          <h6>Results/Impact</h6>
+          <p>Achieved 80% accuracy in location prediction, useful for targeted marketing.</p>
+          <h6>Visualizations</h6>
+          <p>Geographical heatmaps and feature importance plots.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="project9Modal" tabindex="-1" aria-labelledby="project9ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project9ModalLabel">AI in Medical Education</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://via.placeholder.com/600x300?text=AI+Medical+Education" alt="AI Medical Education Research" class="img-fluid mb-3 rounded" loading="lazy"/>
+          <h6>Problem Statement</h6>
+          <p>Explore AI applications to enhance medical education and training.</p>
+          <h6>Tools/Tech</h6>
+          <p>Python, LangChain, Open AI API, Pandas</p>
+          <h6>Approach & Methodology</h6>
+          <p>Conducted a literature review, developed AI-based tools (e.g., chatbots for medical Q&A), and evaluated their impact.</p>
+          <h6>Results/Impact</h6>
+          <p>Proposed scalable AI solutions for medical education, improving learning outcomes.</p>
+          <h6>Visualizations</h6>
+          <p>Charts comparing traditional vs. AI-based learning metrics.</p>
+          <a href="https://github.com/your-repo" class="btn btn-custom">View Research</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blogs Section -->
+  <section id="blogs" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container text-center">
+      <h2>Technical Blogs</h2>
+      <div class="row mt-4 g-4">
+        <div class="col-md-4" style="--i: 1">
+          <div class="blog-card">
+            <h5>Building a Fraud Detection Model</h5>
+            <p>A step-by-step guide to handling imbalanced data with SMOTE and Scikit-learn.</p>
+            <a href="https://medium.com/your-article" class="btn btn-custom">Read More</a>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 2">
+          <div class="blog-card">
+            <h5>Introduction to RAG with LangChain</h5>
+            <p>Exploring Retrieval-Augmented Generation for document-based chatbots.</p>
+            <a href="https://medium.com/your-article" class="btn btn-custom">Read More</a>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 3">
+          <div class="blog-card">
+            <h5>Time Series Forecasting with LSTM</h5>
+            <p>How to build and evaluate LSTM models for stock price prediction.</p>
+            <a href="https://medium.com/your-article" class="btn btn-custom">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container text-center">
+      <h2>Certifications</h2>
+      <div class="row mt-4 g-4">
+        <div class="col-md-4" style="--i: 1">
+          <div class="skill-card tilt">
+            <h5>Innomatics Research Labs</h5>
+            <p>Data Science Certification</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 2">
+          <div class="skill-card tilt">
+            <h5>NASSCOM</h5>
+            <p>Data Science Certification</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 3">
+          <div class="skill-card tilt">
+            <h5>Kaggle</h5>
+            <p>Advanced Machine Learning Micro-Course</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container text-center">
+      <h2>Achievements & Contributions</h2>
+      <div class="row mt-4 g-4">
+        <div class="col-md-4" style="--i: 1">
+          <div class="skill-card tilt">
+            <h5>Kaggle Competitions</h5>
+            <p>Top 10% in Titanic Dataset Challenge</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 2">
+          <div class="skill-card tilt">
+            <h5>Open-Source Contributions</h5>
+            <p>Contributed to LangChain documentation</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="--i: 3">
+          <div class="skill-card tilt">
+            <h5>Data Science Internship</h5>
+            <p>Developed predictive models at [Company Name]</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <h1 class="heading">Contact <span>Me</span></h1>
-    <form action="#">
-      <input type="text" placeholder="Your Name" class="box" />
-      <input type="email" placeholder="Your Email" class="box" />
-      <textarea name="" class="box" placeholder="Your Message" rows="6"></textarea>
-      <input type="submit" value="Send Message" class="btn" />
-    </form>
+  <section id="contact" class="py-5">
+    <div class="parallax-bg" data-rellax-speed="-2"></div>
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form class="mt-4" action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Message</label>
+            <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-custom mt-3">Send Message</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Chandrakanth Kunta. All Rights Reserved.</p>
+  <!-- Footer -->
+  <footer class="py-4 text-center" style="background: var(--card-bg);">
+    <div class="container">
+      <p>© 2025 Chandrakanth Kunta. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://kaggle.com" target="_blank" class="social-icon"><i class="fas fa-code"></i></a>
+        <a href="https://medium.com" target="_blank" class="social-icon"><i class="fab fa-medium"></i></a>
+      </div>
     </div>
   </footer>
 
+  <!-- Scroll-to-Top Button -->
+  <button id="scroll-top" class="btn btn-custom"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Scripts -->
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Typed.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <!-- Vanilla Tilt.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <!-- tsParticles -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js"></script>
+  <!-- Rellax.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Typed.js
+    var typed = new Typed("#typed", {
+      strings: ["Data Scientist", "Machine Learning Engineer", "Generative AI Expert", "Data Analyst"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    // Vanilla Tilt.js
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.5
+    });
+
+    // tsParticles
+    tsParticles.load("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#00d4b5" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: { enable: true, speed: 2 },
+        links: { enable: true, color: "#00d4b5", opacity: 0.3 }
+      },
+      interactivity: {
+        events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
+        modes: { repulse: { distance: 100 }, push: { quantity: 4 } }
+      }
+    });
+
+    // Rellax.js
+    var rellax = new Rellax('.parallax-bg');
+
+    // AOS
+    AOS.init();
+
+    // Theme Toggle
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      toggleButton.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    });
+
+    // Scroll-to-Top
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
